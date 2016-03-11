@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<script type="text/javascript" src="bioinformaticslibrary.js"></script>
-</head>
-<body>
-	<h1>Bioinformatics Library</h1>
-	<p>This is a simple bioinformatics library for CMSC 128</p>
-</body>
+	<head>
+		<script type="text/javascript" src="bioinformaticslibrary.js"></script>
+	</head>
+	<body>
+		<center>
+		<h1>Bioinformatics Library</h1>
+		<p>This is a simple bioinformatics library for CMSC 128</p>
+		<form name="myform" action="" method="get">
+			String 1:
+			<input type="text" name="str1">
+			String 2:
+			<input type="text" name="str2"><P>
+			<input type="button" name="button" value="Submit" onClick="getHammingDistance(str1.value, str2.value)">
+		</form>
+		</center>
+	</body>
 </html>
