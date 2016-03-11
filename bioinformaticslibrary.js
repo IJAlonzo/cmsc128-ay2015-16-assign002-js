@@ -43,30 +43,32 @@ function getHammingDistance(string1, string2)
 function countSubstrPattern(original, pattern)
 {
 
-   	console.log(original);
+	//Checks if one or both of the strings are empty or length is less than 0
+	if ((original.length <= 0) && (pattern.length <= 0)) {
 
-   	//Checks if one or both of the strings are empty or length is less than 0
-    if ((original.length <= 0) && (pattern.length <= 0)) {
+		console.log("ERROR: String length is equal or less than to 0.");
 
-    	console.log("ERROR: String length is equal or less than to 0.");
+	} else {
 
-    } else {
+		var substrCount = 0, position = 0, step = 1;
 
-	    var count = 0, position = 0, step = 1;
+		//Loop through the string to get the substring
+		while (true) {
 
-	    //Loop through the string to get the substring
-	    while (true) {
+			position = original.indexOf(pattern, position);
 
-	        position = original.indexOf(pattern, position);
-	        if (position >= 0) {
-	            ++count;
-	            position += step;
-	        } else break;
+			if (position >= 0) {
 
-	    }
+				substrCount++;
+				position += step;
+
+			} else break;
+
+		}
+
 	}
 
-    console.log(original.length);
-    console.log(count);
-    return count;
+    console.log("Substring Count: " + substrCount);
+
+    return substrCount;
 }
